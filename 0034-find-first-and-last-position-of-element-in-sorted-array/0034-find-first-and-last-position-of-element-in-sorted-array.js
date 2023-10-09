@@ -7,6 +7,7 @@
  * @return {number[]}
  */
 var searchRange = function(nums, target) {
+    //needs to be reviewed again.
     let low = 0, high = nums.length-1, mid;
     
     // find the start
