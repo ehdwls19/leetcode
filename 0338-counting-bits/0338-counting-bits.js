@@ -6,9 +6,7 @@ var countBits = function(n) {
     let count = 0;
     let answers = [];
     while(count <= n){
-        let binaryVal = (count >>> 0).toString(2);
-        let answer = binaryVal === '0' ? 0 : (binaryVal.match(/1/g)).length; 
-        answers.push(answer)
+        answers.push(count.toString(2).replaceAll("0", "").length);
         count++;
     }
     
