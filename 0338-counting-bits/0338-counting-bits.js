@@ -3,12 +3,11 @@
  * @return {number[]}
  */
 var countBits = function(n) {
-    let count = 0;
-    let answers = [];
-    while(count <= n){
-        answers.push(count.toString(2).replaceAll("0", "").length);
-        count++;
+    let res = [0]
+    for(let i=1;i<=n;i++){
+        const half = i>>1
+        const odd = i&1
+        res[i] = res[half] + odd
     }
-    
-    return answers;
+    return res
 };
