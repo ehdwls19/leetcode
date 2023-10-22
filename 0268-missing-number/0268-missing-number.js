@@ -3,5 +3,10 @@
  * @return {number}
  */
 var missingNumber = function(nums) {
-    return nums.reduce((a, c, i) => a + i + 1 - c, 0)
+    let len = nums.length;
+    let xor = len;
+    for(let i = 0; i < len; i++) {
+        xor = xor ^ i ^ nums[i];
+    }
+    return xor;
 };
