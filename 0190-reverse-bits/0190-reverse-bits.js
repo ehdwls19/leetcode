@@ -3,5 +3,13 @@
  * @return {number} - a positive integer
  */
 var reverseBits = function(n) {
-  return Number.parseInt(n.toString(2).split("").reverse().join("").padEnd(32, "0"), 2);
+  var result = 0;
+  var count = 32;
+
+  while (count--) {
+    result *= 2;
+    result += n & 1;
+    n = n >> 1;
+  }
+  return result;
 };
