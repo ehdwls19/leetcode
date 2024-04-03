@@ -28,6 +28,23 @@
 //     return k + count;
 // };
 
+// var findKthPositive = function(arr, k){
+//     return Array.from(Array(2001).keys()).filter(key => !arr.includes(key))[k];
+// }
+
 var findKthPositive = function(arr, k){
-    return Array.from(Array(2001).keys()).filter(key => !arr.includes(key))[k];
+    let i = 0;
+    let currentNumber = 1;
+    let missingNumbersOfCount = 0;
+    
+    while(missingNumbersOfCount<k){
+        if(arr[i] === currentNumber){
+            i++; //1 , 2, 3, 4
+            currentNumber++; //3, 4, 5, 8
+        }else{
+            currentNumber++; //2, 6, 7, 9, 10
+            missingNumbersOfCount++ //1, 2, 3, 4, 5
+        }
+    }
+    return currentNumber -1;
 }
